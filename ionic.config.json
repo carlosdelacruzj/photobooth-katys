@@ -1,0 +1,7 @@
+{
+  "name": "photobooth-katys",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
