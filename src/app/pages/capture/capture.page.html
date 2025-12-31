@@ -1,13 +1,31 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>capture</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="page capture-page" fullscreen="true">
+  <div class="capture-shell">
+    <header class="hud">
+      <div class="pill">Shot {{ currentIndex }}/{{ totalShots }}</div>
+      <div class="pill countdown" *ngIf="isRunning">
+        Cuenta {{ countdown }}s
+      </div>
+    </header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">capture</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <section class="preview">
+      <div class="preview-placeholder">
+        <div class="preview-ring"></div>
+        <p>Preview placeholder</p>
+      </div>
+    </section>
+
+    <footer class="actions">
+      <ion-button
+        expand="block"
+        class="primary-action"
+        [disabled]="isRunning"
+        (click)="start()"
+      >
+        Iniciar
+      </ion-button>
+      <ion-button expand="block" color="medium" (click)="cancel()">
+        Salir
+      </ion-button>
+    </footer>
+  </div>
 </ion-content>

@@ -1,0 +1,66 @@
+.config-page {
+  --background: linear-gradient(160deg, rgba(20, 24, 33, 0.94), rgba(16, 52, 68, 0.9));
+  color: #f6f6f2;
+}
+
+.config-shell {
+  min-height: calc(100vh - 2rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.config-card {
+  width: min(520px, 100%);
+  border-radius: 28px;
+  box-shadow: 0 24px 60px rgba(8, 12, 20, 0.35);
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.subtitle {
+  margin: 0.35rem 0 0;
+  color: rgba(246, 246, 242, 0.7);
+  font-size: 0.95rem;
+}
+
+ion-card-content {
+  display: grid;
+  gap: 1rem;
+}
+
+ion-item {
+  --background: transparent;
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  color: inherit;
+}
+
+ion-segment {
+  --background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+}
+
+ion-segment-button {
+  --indicator-color: rgba(246, 246, 242, 0.2);
+  --color-checked: #ffffff;
+}
+
+ion-range {
+  --bar-background: rgba(255, 255, 255, 0.15);
+  --bar-background-active: rgba(255, 255, 255, 0.6);
+  --knob-background: #ffffff;
+}
+
+ion-select {
+  --placeholder-color: rgba(246, 246, 242, 0.6);
+}
+
+.primary-action {
+  margin-top: 0.5rem;
+  --border-radius: 16px;
+  --box-shadow: 0 16px 32px rgba(8, 12, 20, 0.35);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}

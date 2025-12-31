@@ -1,13 +1,25 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>result</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="ion-padding page result-page">
+  <div class="result-shell">
+    <ion-card class="result-card">
+      <ion-card-header>
+        <ion-card-title>Resultados</ion-card-title>
+        <p class="subtitle">Resumen de la sesion completada.</p>
+      </ion-card-header>
+      <ion-card-content>
+        <div
+          class="shots-grid"
+          [class.strip]="layout === 'strip'"
+        >
+          <div class="shot-card" *ngFor="let shot of shots; index as i">
+            <h3>Foto {{ i + 1 }}</h3>
+            <p class="shot-id">{{ shot }}</p>
+          </div>
+        </div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">result</ion-title>
-    </ion-toolbar>
-  </ion-header>
+        <ion-button expand="block" class="primary-action" (click)="startNewSession()">
+          Nueva sesion
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>

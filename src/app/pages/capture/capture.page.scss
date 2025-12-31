@@ -1,0 +1,70 @@
+.capture-page {
+  --background: radial-gradient(circle at top, rgba(32, 52, 78, 0.75), rgba(8, 10, 18, 0.95));
+  color: #f6f6f2;
+}
+
+.capture-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+.hud {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.pill {
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+}
+
+.preview {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  margin: 1.5rem 0;
+}
+
+.preview-placeholder {
+  width: min(520px, 90%);
+  aspect-ratio: 3 / 4;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px dashed rgba(255, 255, 255, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: rgba(246, 246, 242, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+}
+
+.preview-ring {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.25);
+}
+
+.actions {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.primary-action {
+  --border-radius: 16px;
+  --box-shadow: 0 16px 32px rgba(8, 12, 20, 0.35);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}

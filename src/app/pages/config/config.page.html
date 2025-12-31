@@ -1,13 +1,47 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>config</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="ion-padding page config-page">
+  <div class="config-shell">
+    <ion-card class="config-card">
+      <ion-card-header>
+        <ion-card-title>Configurar sesión</ion-card-title>
+        <p class="subtitle">Define el layout y la velocidad de captura.</p>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item lines="none">
+          <ion-label>Layout</ion-label>
+        </ion-item>
+        <ion-segment [(ngModel)]="layout">
+          <ion-segment-button value="2x2">2x2</ion-segment-button>
+          <ion-segment-button value="strip">Strip</ion-segment-button>
+        </ion-segment>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">config</ion-title>
-    </ion-toolbar>
-  </ion-header>
+        <ion-item lines="none" class="range-item">
+          <ion-label>Cuenta regresiva: {{ countdownSeconds }}s</ion-label>
+        </ion-item>
+        <ion-range
+          min="1"
+          max="10"
+          step="1"
+          [(ngModel)]="countdownSeconds"
+        ></ion-range>
+
+        <ion-item lines="none">
+          <ion-label>Fotos totales</ion-label>
+          <ion-select interface="popover" [(ngModel)]="totalShots">
+            <ion-select-option [value]="2">2</ion-select-option>
+            <ion-select-option [value]="3">3</ion-select-option>
+            <ion-select-option [value]="4">4</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-label>Usar cámara frontal</ion-label>
+          <ion-toggle [(ngModel)]="useFrontCamera"></ion-toggle>
+        </ion-item>
+
+        <ion-button expand="block" class="primary-action" (click)="start()">
+          Empezar
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>

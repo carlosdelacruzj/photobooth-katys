@@ -1,20 +1,35 @@
-import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { IonicModule } from '@ionic/angular';
+
+import {
+  LayoutPreset,
+  PhotoboothStateService,
+} from '../../services/photobooth-state.service';
 
 @Component({
   selector: 'app-result',
   templateUrl: './result.page.html',
   styleUrls: ['./result.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [CommonModule, IonicModule],
 })
 export class ResultPage implements OnInit {
+  layout: LayoutPreset = '2x2';
+  shots: string[] = [];
 
-  constructor() { }
+  constructor(
+    private readonly state: PhotoboothStateService,
+    private readonly router: Router
+  ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.layout = this.state.config.layout;
+    this.shots = this.state.shots;
   }
 
+  async startNewSession(): Promise<void> {
+    await this.router.navigateByUrl('/config');
+  }
 }
